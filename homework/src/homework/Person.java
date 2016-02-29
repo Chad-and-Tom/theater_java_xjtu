@@ -8,6 +8,9 @@ public class Person {
 	private String age;
 	private String hobby;
 	private String detail;
+	private int row=-1;
+	private int column=-1;
+	private boolean ticket;
 	private boolean online;
 	public Person(Person p){
 		this.username=p.username;
@@ -17,6 +20,8 @@ public class Person {
 		this.age=p.age;
 		this.hobby=p.hobby;
 		this.detail=p.detail;
+		this.row=p.row;
+		this.column=p.column;
 	}
 	public Person(String a,String b,int c,String d,String e,String f,String g){
 		this.username=a;
@@ -26,12 +31,17 @@ public class Person {
 		this.age=e;
 		this.hobby=f;
 		this.detail=g;
+		this.row=-1;
+		this.column=-1;
 	}
 	public String getUsername(){
 		return username;
 	}
 	public String getPassword(){
 		return password;
+	}
+	public int getId(){
+		return id;
 	}
 	public String getName(){
 		return name;
@@ -44,6 +54,25 @@ public class Person {
 	}
 	public String getDetail(){
 		return detail;
+	}
+	public boolean getTicket(){
+		return ticket;
+	}
+	public int getRow(){
+		return row;
+	}
+	public int getColumn(){
+		return column;
+	}
+	public void book(int r,int c){
+		ticket=true;
+		row=r;
+		column=c;
+	}
+	public void cancel(){
+		ticket=false;
+		row=-1;
+		column=-1;
 	}
 	public void  setOnline(boolean b){
 		online=b;
@@ -60,4 +89,5 @@ public class Person {
 		this.hobby=e;
 		this.detail=f;
 	}
+	
 }
